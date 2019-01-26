@@ -117,12 +117,6 @@ Security and passwords
 
 
 ABOUT: 
-
-Bits & Bytes  
-     -There are 8 bits in a byte
-     -
-     
-     
      
 Programming
      - Primative Data Types
