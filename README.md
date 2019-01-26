@@ -95,10 +95,167 @@ A. O(nlogn) B. O(n) C. O(1) (correct) D. O(logn)
 
 
 Concepts:
-- Data types: integer, string, double, float, variables, and chars
-- Security and passwords
-- Programming statements: if, if-else, for and while
-- Executing basic statements
-- Security and phishing recognition
-- Memory allocation and recall, creating - arrays
-- OSI model and incident indication
+
+General: 
+     - bits and bytes
+     - Runtime
+
+Data Structure:
+     - Linked List
+ 
+Programming: 
+     - Data types: Integer, string, double, float, variables, and chars
+     - If statements & Loops
+     - Executing basic statements
+
+Security and passwords
+     - Security and phishing recognition
+     - Memory allocation and recall, creating - arrays
+     - OSI model and incident indication
+
+
+
+
+ABOUT: 
+
+Bits & Bytes  
+     -There are 8 bits in a byte
+     -
+     
+     
+     
+Programming
+    - Primative Data Types
+          - Int: 4, -4, 2, 234, 123, -398313
+          - Double: 3.2, 4.0, 321.23
+          - Float: 3.3f, -43.4f, 3f, 1.23e4        
+          - Boolean: True, False
+          - String: "Hello" , "3432342", "142342.12321", "2.123e4", " ", "A string can be any character"
+     
+     
+     - Conditional Statements
+          - Equals: a == b
+          - Doesn't Equal: a != b
+          - Less than: a<b
+          - Less Than or equal to: a <=b
+          - Greater than: a>b
+          - Greater than or equal to: a >= b
+          
+    - Declairing a variable 
+         ~In Java~
+               - [data type] [variable_name];
+               - int x;
+               - String name;
+               - boolean true_or_false
+               - float f;
+               - double d;
+                    or
+               - [data type] [variable_name] = [data]
+               - int x = 5;
+               - String name = "Paul";
+               - bloolean true_or_false = false;
+               - float f = 43.2e3f;
+               - double d = 23.3;
+               
+         ~In Python~
+               - [varialbe name] = [data]
+               - Int
+                    -x = 5
+               - String
+                    -name = "Johnny"
+               - Boolean
+                    -true_or_false = True
+               - Float
+                    - f = 34.34e2f
+               - Double
+                    - d = 4.3
+              
+              
+              
+    - Print Statements
+          ~In Java~
+               - using a variable 
+          String helloworld = "Hello World"
+          System.out.println(helloworld);
+          
+          output: Hello World
+          
+               -No variable
+          System.out.println("Hello World") 
+         
+         output: Hello World
+         
+               - Concatination
+         String name = "Johnny"
+         System.out.println("Hello my name is " + name);
+         
+         output: Hello my name is Johnny
+         
+         
+         ~In Python~
+               - using a variable
+          helloworld = "Hello World"
+          print(helloworld
+          
+          output: Hello World
+          
+               - no variable
+          print("Hello World")
+          
+          output: Hello World
+          
+                - Concatination
+         name = "Johnny"
+         print("Hello My name is ", name)
+         
+         output: Hello My name is Johnny
+         
+          
+         
+     - If Statements
+          ~In Java~
+           
+           int age = 22;
+           if(age > 16)
+           {
+           System.out.println("You are old enough to drive!!");
+           }
+
+          output: You are old enough to drive!!
+
+
+          ~In Python~
+          a = 22
+          b = 16
+          if a > b: 
+               print("You are old enough to drive!!")
+               
+          output: You are old enough to drive!!     
+               
+   -If Else Statements
+          ~In Java~
+          
+          int age = 10;
+          if(age > 18)
+          {
+               System.out.println("You can vote") ;
+          } 
+          else
+          {
+               System.out.println("You are too young to vote");
+          }
+          
+          output: You are too young to vote
+          
+          
+          ~In Python~
+          
+          age = 10
+          if age > 18:
+               print("you are old enough to vote")
+          else:
+               print("you aren't old enough to vote")
+               
+          output: You aren't old enough to vote 
+               
+          
