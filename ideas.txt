@@ -1,0 +1,17 @@
+NAME: CodHer
+
+The game (ideas):
+-	Levels – grouped by concepts and levels 
+  o	Easy – datatypes, bits and bytes (+5 points/question answered correctly)
+  o	Medium – if, while, for loops (+10pts/question answered correctly)
+  o	Hard – Sorting, data structures (+15pts/question answered correctly)
+        To advance to the next stage (easy  medium for example), the player has to have a specific number of points 
+        (say at least 50pts to advance from easy to medium)
+-	Gameplay
+  o	User is initially given 3 lives. 
+  o	User is running and is closer to a obstacle. To avoid obstacle, the user must answer a question correctly. 
+      	If user answers correctly, they avoid the obstacle
+      	If user does not answer correctly (or doesn’t answer within given timeframe) then the user loses a life and must answer a different question
+-	Questions come in the form of popups to the user
+
+
