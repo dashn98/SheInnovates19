@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="26" width="24" viewBox="0 0 24 26">
-  <g fill="none" fill-rule="evenodd" stroke="#40354E" stroke-width="1.5" transform="translate(0 1)">
-    <polyline points="0 0 3.285 0 3.285 17.509 23.356 17.509"/>
-    <polyline points="3.197 3.714 23.122 3.714 23.122 9.439 3.114 14.259"/>
-    <ellipse cx="5.19" cy="21.751" rx="2.076" ry="2.122"/>
-    <ellipse cx="19.721" cy="21.751" rx="2.076" ry="2.122"/>
-  </g>
-</svg>
