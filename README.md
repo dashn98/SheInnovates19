@@ -79,3 +79,8 @@ Hard: Algorithm questions?
 
 1. Which of the folowing is considered a definite indicator of an incident?
 A. Changes to system logs (correct) B. Activities at unexpected times C. Presence of new accounts D. Presence of unfamiliar files
+
+2. Which data structure is indexable?  
+A. Array (correct) B. Graph C. Linked List D. Tree
+
+
