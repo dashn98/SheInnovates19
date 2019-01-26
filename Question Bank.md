@@ -28,6 +28,13 @@ A. 9 B. 8 C. 10 (correct) D. 4
 Convert Binary to Decimal: What is 0001 in decimal?
 A. 0 B. 3 C. 4. D 1 (correct)
 
+7.  
+Which of the following is a programming conditional statement that, if proved true, performs a function or displays information?  
+A. if-else statement (correct) B. if-or statment C. or-else statement D. for loop
+
+8.
+Pick the best password:
+A. ABCDEF B. apple1234 C. 4rlyp3q@#9MYn24 (Correct) D. NSPHOUSCERATEME
 
 Medium: Execute basic statements  
 
@@ -67,9 +74,12 @@ while ( x < 6 )
 The code above would output?  
 A. i i i i i B. 1 2 3 4 C. 1 2 3 4 5 (correct) D. 0 1 2 3 4  
 
-5.  
-
+5. How do you recognise a phishing scam?
+A. Email the sender back and ask if they meant to send the email B. Click on the links in the email and fill out the forms  
+C. Forward the email to everyone D. Look at the sender's email, verify any logos and do not respond to anything within the email (correct)
 
 
 Hard: Algorithm questions?
 
+1. Which of the folowing is onsidered a definite indicator of an incident?
+A. Changes to system logs (correct) B. Activities at unexpected times C. Presence of new accounts D. Presence of unfamiliar files
