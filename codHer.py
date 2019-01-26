@@ -90,6 +90,18 @@ totallabel=pyglet.text.Label("",
                                  anchor_x='center', anchor_y='center', color=(0, 0, 0, 255))
 
 
+# Questions:
+
+easy_questions = [" x = 'Hello World' \n x What Data Type is X? \n A. String B. Integer C. Boolean D. Char ", "x = 1.0 \n What Data Type is x? \n A. Integer B. Double C. String S. Char ", " How many bits are in a byte? \n A. 4 B. 2. C. 8 D. 12 ", " How many bytes are in a megabyte? \n A. 1000000 B. 100000000 C. 100 D. 1000000000000", "Convert Binary to Decimal: What is 1010 in decimal? \n A. 9 B. 8 C. 10 D. 4", "Convert Binary to Decimal: What is 0001 in decimal? \n A. 0 B. 3 C. 4. D. 1 "   ]
+easy_answers = ["A", "B", "C" , "A", "C", "D"]
+
+medium_questions = ["x = 'Hello World'\n print(x) \n The code above would output?\n A. Hello World B. x C. x = 'Hello World' D. 'Hello World'", " x = 5 if x == 5 \n { \n     print(x)\n }\n else\n{\n     print('x is not 5')\nThe code above would output?\nA. x is not 5 B. nothing C. 5 D. 6", "for(int i = 1; i <= 5; i++) \n{\n     print(i + " ")\n}\nThe code above would output?\nA. i i i i i B. 1 2 3 4 C. 1 2 3 4 5 D. 0 1 2 3 4", "int x = 1 \n while ( x < 6 )\n {\n     print(x + ' ')\n}\nThe code above would output?\nA. i i i i i B. 1 2 3 4 C. 1 2 3 4 5  D. 0 1 2 3 4", "How do you recognise a phishing scam?\n A. Email the sender back and ask if they meant to send the email B. Click on the links in the email and fill out the forms C. Forward the email to everyone D. Look at the sender's email, verify any logos and do not respond to anything within the email"]
+easy_answers = ["A", "C", "C", "C", "D", "D"]
+
+hard_questions = []
+hard_answers = []
+
+
 ##def hit(i,j):                                                              #checks collision
 ##    global ballsprite
 ##    
