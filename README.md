@@ -355,4 +355,27 @@ Programming
                     5
                
      
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     Mary Jackson
+    Born in Virginia in 1921, Mary Winston Jackson excelled academically in a time of racial segregation. Her math and science skills earned her a position as a "human computer" for NACA, and she later became NASA's first black female engineer. Along with serving a vital role in the development of the space program, she helped other women and minorities advance their careers. Jackson died in February 2005 at the age of 83.
+     
+    Grace Hopper
+    Born in New York City in 1906, Grace Hopper joined the U.S. Navy during World War II and was assigned to program the Mark I computer. She continued to work in computing after the war, leading the team that created the first computer language compiler, which led to the popular COBOL language. She resumed active naval service at the age of 60, becoming a rear admiral before retiring in 1986. Hopper died in Virginia in 1992.
+    
+    Kathrine Johnson
+    Gorn in 1918 in West Virginia, Katherine G. Johnson made the most of limited educational opportunities for African Americans, graduating from college at age 18. She began working in aeronautics as a "computer" in 1952, and after the formation of NASA, she performed the calculations that sent astronauts into orbit in the early 1960s and to the moon in 1969. Johnson was honored with the Presidential Medal of Freedom in 2015, and saw her story brought to light through a book and a feature film the following year.
           
+          
+     Ada Lovelace
+     The daughter of famed poet Lord Byron, Augusta Ada Byron, Countess of Lovelace—better known as "Ada Lovelace"—was born in London on December 10, 1815. Ada showed her gift for mathematics at an early age. She translated an article on an invention by Charles Babbage, and added her own comments. Because she introduced many computer concepts, Ada is considered the first computer programmer. Ada died on November 27, 1852.
+
+
