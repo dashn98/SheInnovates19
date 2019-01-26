@@ -17,12 +17,12 @@ mygame = pyglet.window.Window(790, 700,                     # setting window
               )                                             # Calling base class constructor
 mygame.set_location(screen.width // 2 - 200,screen.height//2 - 350)
  
-girlImage = pyglet.image.load_animation('fatema.gif')                 # Image for brick
+girlImage = pyglet.image.load_animation('sofi.gif')                 # Image for brick
 #girlImage.anchor_x= girlImage.width/2
 #girlImage.anchor_y=girlImage.height/2
-girlSprite= pyglet.sprite.Sprite(girlImage, 300, 60)
+girlSprite= pyglet.sprite.Sprite(girlImage, 200, 0)
 girlSprite.visible = False
-bgimage= pyglet.resource.image('background.png')
+bgimage= pyglet.resource.image('city.png')
 obstacleimage = pyglet.image.load_animation('firewall.gif')
 obstacleSprite = pyglet.sprite.Sprite(obstacleimage, 800, 60)
 obstacleSprite.scale = 2
@@ -30,6 +30,10 @@ obstacleSprite.visible =False
 
 backSprite = pyglet.sprite.Sprite(bgimage, 0, 0)                 # sprite for help an instructions
 backSprite.visible = False
+
+logoimage=pyglet.resource.image('logoscreen.png')
+logosprite=pyglet.sprite.Sprite(logoimage, 0, 0)                 # sprite for help an instructions
+logosprite.visible=True
 
 inst=pyglet.resource.image('help.png')
 instsprite=pyglet.sprite.Sprite(inst, 0, 0)                 # sprite for help an instructions
@@ -60,19 +64,23 @@ fallsound=pyglet.resource.media("close.wav", streaming = False)
 
 
 move=False
-
+logo_on = 0
 c=0
 score = 0
 lives =3
 t =0
 strike =0
+q_num =0
+level =1
+frame =0
+answer = ""
 
 
 scorelabel = pyglet.text.Label("",
                              font_name='Comic Sans MS',
-                             font_size=48,
-                             x=10, y=10,
-                             anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
+                             font_size=28,
+                             x=20, y=650,
+                             anchor_x='center', anchor_y='center', color=(0, 0, 0, 255))
 strikelabel = pyglet.text.Label("",
                              font_name='Comic Sans MS',
                              font_size=48,
@@ -80,100 +88,31 @@ strikelabel = pyglet.text.Label("",
                              anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
 looselabel = pyglet.text.Label("",
                              font_name='Comic Sans MS',
-                             font_size=48,
+                             font_size=28,
                              x=400, y=400,
                              anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
-scores=[]
+winlabel = pyglet.text.Label("",
+                             font_name='Comic Sans MS',
+                             font_size=28,
+                             x=400, y=400,
+                             anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
+question = pyglet.text.Label("",
+                             font_name='Comic Sans MS',
+                             font_size=12,
+                             x=400, y=600,
+                             anchor_x='center', anchor_y='center', color=(0, 0, 0, 255))
 
-
-
-
-# Questions:
-
-easy_questions = [" x = 'Hello World' \n x What Data Type is X? \n A. String B. Integer C. Boolean D. Char ", "x = 1.0 \n What Data Type is x? \n A. Integer B. Double C. String S. Char ", " How many bits are in a byte? \n A. 4 B. 2. C. 8 D. 12 ", " How many bytes are in a megabyte? \n A. 1000000 B. 100000000 C. 100 D. 1000000000000", "Convert Binary to Decimal: What is 1010 in decimal? \n A. 9 B. 8 C. 10 D. 4", "Convert Binary to Decimal: What is 0001 in decimal? \n A. 0 B. 3 C. 4. D. 1 "   ]
-easy_answers = ["A", "B", "C" , "A", "C", "D"]
+easy_questions = [" x = 'Hello World' \n  What Data Type is x? \n A. String B. Integer C. Boolean D. Char ", "x = 1.0 \n What Data Type is x? \n A. Integer B. Double C. String S. Char ", " How many bits are in a byte? \n A. 4 B. 2. C. 8 D. 12 ", " How many bytes are in a megabyte? \n A. 1000000 B. 100000000 C. 100 D. 1000000000000", "Convert Binary to Decimal: What is 1010 in decimal? \n A. 9 B. 8 C. 10 D. 4", "Convert Binary to Decimal: What is 0001 in decimal? \n A. 0 B. 3 C. 4. D. 1 "   ]
+easy_answers = ["A", "b", "c" , "a", "c", "d"]
 
 medium_questions = ["x = 'Hello World'\n print(x) \n The code above would output?\n A. Hello World B. x C. x = 'Hello World' D. 'Hello World'", " x = 5 if x == 5 \n { \n     print(x)\n }\n else\n{\n     print('x is not 5')\nThe code above would output?\nA. x is not 5 B. nothing C. 5 D. 6", "for(int i = 1; i <= 5; i++) \n{\n     print(i + " ")\n}\nThe code above would output?\nA. i i i i i B. 1 2 3 4 C. 1 2 3 4 5 D. 0 1 2 3 4", "int x = 1 \n while ( x < 6 )\n {\n     print(x + ' ')\n}\nThe code above would output?\nA. i i i i i B. 1 2 3 4 C. 1 2 3 4 5  D. 0 1 2 3 4", "How do you recognise a phishing scam?\n A. Email the sender back and ask if they meant to send the email B. Click on the links in the email and fill out the forms C. Forward the email to everyone D. Look at the sender's email, verify any logos and do not respond to anything within the email"]
-easy_answers = ["A", "C", "C", "C", "D", "D"]
+easy_answers = ["a", "c", "c", "c", "d", "d"]
 
-hard_questions = ["Which of the folowing is considered a definite indicator of an incident?\n A. Changes to system logs  B. Activities at unexpected times C. Presence of new accounts D. Presence of unfamiliar files", "Which data structure is indexable? \n A. Array B. Graph C. Linked List D. Tree", "What layer is the data link layer in the OSI model?\n A. First B. Second C. Third D. Fourth", "What is a Linked List?\nA. a data structure consisting of a collection of elements (values or variables), each identified by at least one index or key. B. a hierarchical tree structure, with a root value and subtrees of children with a parent node C. an ordered set of data elements, each containing a link to its successor D. a String", "What runtime is the fastest?\nA. O(nlogn) B. O(n) C. O(1) D. O(logn)"]
-hard_answers = ["A", "A", "B" "C", "C" ]
+hard_questions = []
+hard_answers = []
 
 
-##def hit(i,j):                                                              #checks collision
-##    global ballsprite
-##    
-##    topa=j.y+j.height/2
-##    bottoma=j.y-j.height/2
-##    righta=j.x+j.width/2
-##    lefta=j.x-j.width/2
-##
-##    topb=i.y+i.height
-##    bottomb=i.y
-##    rightb=i.x+i.width
-##    leftb=i.x
-##
-##    if bottoma >= topb :
-##        return False
-##    if topa <= bottomb:
-##        return False
-##    if righta <= leftb :
-##        return False
-##    if lefta >= rightb:
-##        return False
-##    return True;                                                         #returns true if ball collides with pins
-##
-##def fall(a):                                                             #pushes pins down if coliision is true
-##    
-##    global lis,lis2, frame, length1, m2, m1, g1, g2
-##    
-##    
-##    f=True
-##   
-##    for i in lis:
-##        if i not in lis2 and i.visible== True:
-##            if hit(i,a)==True:
-##                lis2.append(i)
-##                r=random.randint(1,2)
-##                if r==1:
-##                    i.rotation =83
-##                elif r==2:
-##                    i.rotation =-85
-##                if frame%2==0:
-##                    m2+=1
-##                    g2+=1
-##                    
-##                elif frame%1==0:
-##                    m1+=1
-##                    g1+=1
-##                sparesound.play()                                      #soud of falling pins played
-##                
-##
-##def arrange():                                                          #arranges pins in original order
-##    global frame, lis, lis2
-##    a=0
-##    if frame%2==0 or len(lis2)==10:
-##        for i in range(4):
-##            lis[i].x=300+a
-##            lis[i].y=530
-##            a+=34
-##        a=0
-##        for j in range(4,7):
-##            lis[j].x=318+a
-##            lis[j].y=520
-##            a+=34
-##        a=0
-##        for k in range(7,9):
-##            lis[k].x=336+a
-##            lis[k].y=510
-##            a+=34
-##        lis[9].x=354
-##        lis[9].y=500
-##        lis[9].visible=True
-##            
-##        for i in lis:
-##            i.rotation = 0
-##            i.visible=True        
+
         
 @mygame.event
 
@@ -181,6 +120,7 @@ def on_draw():                                                                  
      
     mygame.clear()
     #bgimage.blit(0,0)
+    
     menusprite.draw()
     instsprite.draw()
     backSprite.draw()
@@ -189,10 +129,11 @@ def on_draw():                                                                  
     live2.draw()
     live3.draw()
     obstacleSprite.draw()
-    scorelabel.draw()
     strikelabel.draw()
     looselabel.draw()
-
+    question.draw()
+    logosprite.draw()
+    scorelabel.draw()
 
 @mygame.event
 def on_mouse_release(x, y, button, modifiers):                                    # takes users mouse input
@@ -209,6 +150,7 @@ def on_mouse_release(x, y, button, modifiers):                                  
                 live1.visible = True
                 live2.visible = True
                 live3.visible =True
+                scorelabel.text = "0"
             elif (277 <= x <= 478) and (292 <= y <= 368):                       # if help selected
                 instsprite.visible=True
                 menusprite.visible= False
@@ -224,94 +166,54 @@ def on_mouse_release(x, y, button, modifiers):                                  
         if button==mouse.LEFT:
             if frame< 21:
                 menusprite.visible= True
-##            else:                                                                #restarts and initializes all variables
-##                x=0
-##                y=0
-##                s=1
-##                c=0
-##                angle=0
-##                lis2=[]
-##                cond = False
-##                frame=0
-##                b=False
-##                t=0
-##                m1=0
-##                m2=0
-##                g1=0
-##                g2=0
-##                lock= True
-##                lock2=False
-##                lock3=False
-####                ballsrpite.x=400
-####                ballsprite.y=60
-##                a=0
-##                menusprite.visible=True
-##                for i in range(4):
-##                    lis[i].x=300+a
-##                    lis[i].y=530
-##                    a+=34
-##                a=0
-##                for j in range(4,7):
-##                    lis[j].x=318+a
-##                    lis[j].y=520
-##                    a+=34
-##                a=0
-##                for k in range(7,9):
-##                    lis[k].x=336+a
-##                    lis[k].y=510
-##                    a+=34
-##                lis[9].x=354
-##                lis[9].y=500
-##                lis[9].visible=True
-##                    
-##                for i in lis:
-##                    i.rotation = 0
-##                    i.visible=True
-##
-##                for j in range(20):
-##                    scores[j].text=""
-##                for k in range(10):
-##                    sums[k].text=""                                    
+                                    
                             
     
 
-##@mygame.event
+@mygame.event
 
-##def on_key_press(symbol, modifiers):                                         #takes key input if gamescreen is on only
-##
-##    global move, angle, frame, b, lis2,m1, m2, g1, g2, t, summed, total
-##
-##    if menusprite.visible== False  and instsprite.visible==False :
-##        if arrowsprite.visible==True:
-##            if symbol == key.RIGHT:                                          #rotates arrow towards right if right key pressed
-##                if angle<50:
-##                    arrowsprite.rotation+=5
-##                    angle+=5
-##            elif symbol==key.LEFT:                                           #rotates arrow towards left if left key pressed
-##                if angle>-50:
-##                    arrowsprite.rotation-=5
-##                    angle-=5
-##            if symbol == key.SPACE:                                          #moves ball if space bar pressed
-##                bowlsound.play()
-##                move = True
-##                print(angle)
-##                arrowsprite.visible=False
-##                b=False
-##                lis2=[]
-##                t=0
-##                if frame%2==0:
-##                    total+=g1+g2
-##                    g1=0
-##                    g2=0
+def on_key_release(symbol, modifiers):                                         #takes key input if gamescreen is on only
+    
+    global c, frame, lives, t, strike, q_num, level, logo_on, logosprite, score, answer
+    
+    if menusprite.visible== False  and instsprite.visible==False :
+        print("hey")
+        if symbol == key.A:
+            answer = "A"
+        elif symbol == key.B:
+            answer = "b"
+        elif symbol == key.C:
+            answer = "c"
+        elif symbol == key.D:
+            answer = "d"
+        if level == 1:
+            if answer == easy_questions[q_num]:
+                print("yes")
+                score+=1
+                scorelabel.text = str(score)                
+            
+        elif level == 2:
+            if answer == medium_questions[q_num]:
+                score+=1
+                scorelabel.text = str(score)
+                
+        elif level == 3:
+            if answer == hard_questions[q_num]:
+                score+=1
+                scorelabel.text = str[q_num]
                     
             
     
 def update(dt):
-    global c, frame, lives, t, strike
-    if lives > 0:
-        backSprite.x -= 400 * dt
-        if(backSprite.x <= -600):
-            backSprite.x =0
+    
+    global c, frame, lives, t, strike, q_num, level, logo_on, logosprite
+    logo_on +=1
+    if logo_on > 30:
+        logosprite.visible= False
+        
+    backSprite.x -= 400 * dt
+    if(backSprite.x <= -600):
+        backSprite.x =0
     
     #c+=1
     #fram+=1
@@ -324,13 +226,29 @@ def update(dt):
         
     if menusprite.visible== False and instsprite.visible==False:
         
-        c+=1
+        c+=0.4
+        if q_num >= 5:
+            q_num =0
+            level+=1
+            if level >=4:
+                winlabel.text = "CONGRATULATIONS"
         if(c >= 50):
+            
             obstacleSprite.visible = True
             obstacleSprite.x -=5
+            if level == 1:
+                question.text = easy_questions[q_num]                            #question appears
+            elif level == 2:
+                question.text = medium_questions[q_num]
+            elif level == 3:
+                question.text = hard_questions[q_num]  
+            
         
-        if( obstacleSprite.x <= (girlSprite.x + girlSprite.width)):
+        if( obstacleSprite.x <= (girlSprite.x + girlSprite.width//2)):     #girl hit by obstacle
             obstacleSprite.x = 800
+            c=0
+            q_num+=1
+            question.text =""
             t+=1
             lives -=1
             if(lives == 2):
@@ -351,7 +269,7 @@ def update(dt):
                 strike =0
         elif (lives > 0 and strike ==1):
             if t < 15:
-                strikelabel.text = "Strike!"
+                strikelabel.text = "STRIKE!"
                 t+=1
             else:
                 strikelabel.text = ""
