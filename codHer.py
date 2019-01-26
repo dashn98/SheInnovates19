@@ -108,8 +108,8 @@ easy_answers = ["A", "b", "c" , "a", "c", "d"]
 medium_questions = ["x = 'Hello World'\n print(x) \n The code above would output?\n A. Hello World B. x C. x = 'Hello World' D. 'Hello World'", " x = 5 if x == 5 \n { \n     print(x)\n }\n else\n{\n     print('x is not 5')\nThe code above would output?\nA. x is not 5 B. nothing C. 5 D. 6", "for(int i = 1; i <= 5; i++) \n{\n     print(i + " ")\n}\nThe code above would output?\nA. i i i i i B. 1 2 3 4 C. 1 2 3 4 5 D. 0 1 2 3 4", "int x = 1 \n while ( x < 6 )\n {\n     print(x + ' ')\n}\nThe code above would output?\nA. i i i i i B. 1 2 3 4 C. 1 2 3 4 5  D. 0 1 2 3 4", "How do you recognise a phishing scam?\n A. Email the sender back and ask if they meant to send the email B. Click on the links in the email and fill out the forms C. Forward the email to everyone D. Look at the sender's email, verify any logos and do not respond to anything within the email"]
 easy_answers = ["a", "c", "c", "c", "d", "d"]
 
-hard_questions = []
-hard_answers = []
+hard_questions = ["Which of the folowing is considered a definite indicator of an incident?\n A. Changes to system logs  B. Activities at unexpected times C. Presence of new accounts D. Presence of unfamiliar files", "Which data structure is indexable? \n A. Array B. Graph C. Linked List D. Tree", "What layer is the data link layer in the OSI model?\n A. First B. Second C. Third D. Fourth", "What is a Linked List?\nA. a data structure consisting of a collection of elements (values or variables), each identified by at least one index or key. B. a hierarchical tree structure, with a root value and subtrees of children with a parent node C. an ordered set of data elements, each containing a link to its successor D. a String", "What runtime is the fastest?\nA. O(nlogn) B. O(n) C. O(1) D. O(logn)"]
+hard_answers = ["A", "A", "B" "C", "C" ]
 
 
 
