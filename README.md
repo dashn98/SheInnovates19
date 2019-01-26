@@ -79,3 +79,15 @@ Hard: Algorithm questions?
 
 1. Which of the folowing is considered a definite indicator of an incident?
 A. Changes to system logs (correct) B. Activities at unexpected times C. Presence of new accounts D. Presence of unfamiliar files
+
+2. Which data structure is indexable?  
+A. Array (correct) B. Graph C. Linked List D. Tree
+
+3. What layer is the data link layer in the OSI model?
+A. First B. Second (Correct) C. Third D. Fourth 
+
+4. What is a Linked List?
+A. a data structure consisting of a collection of elements (values or variables), each identified by at least one index or key. B. a hierarchical tree structure, with a root value and subtrees of children with a parent node C. an ordered set of data elements, each containing a link to its successor (correct) D. a String
+
+5. What runtime is the fastest?
+A. O(nlogn) B. O(n) C. O(1) (correct) D. O(logn)
