@@ -22,15 +22,27 @@ A. 9 B. 8 C. 10 (correct) D. 4
 Convert Binary to Decimal: What is 0001 in decimal?
 A. 0 B. 3 C. 4. D 1 (correct)
 
-Which of the following is a programming conditional statement that, if proved true, performs a function or displays information?
+Which of the following is a programming conditional statement that, if proved true, performs a function or displays information?  
 A. if-else statement (correct) B. if-or statment C. or-else statement D. for loop
 
-Medium: Execute basic statements
-x = "Hello World"
-print(x)
-The code above would output?
+Medium: Execute basic statements  
+
+x = "Hello World"  
+print(x)  
+The code above would output?  
 A. Hello World (correct) B. x C. x = "Hello World" D. "Hello World"
 
+x = 5
+if x == 5  
+{  
+  print(x)  
+} 
+else  
+{  
+  print("x is not 5")  
+}  
+The code above would output?  
+A. x is not 5 B. nothing C. 5 (correct) D. 6  
 
 Hard: Algorithm questions?
 
