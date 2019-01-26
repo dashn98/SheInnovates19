@@ -86,3 +86,5 @@ A. Array (correct) B. Graph C. Linked List D. Tree
 3. What layer is the data link layer in the OSI model?
 A. First B. Second (Correct) C. Third D. Fourth 
 
+4. What is a Linked List?
+A. a data structure consisting of a collection of elements (values or variables), each identified by at least one index or key. B. a hierarchical tree structure, with a root value and subtrees of children with a parent node C. an ordered set of data elements, each containing a link to its successor (correct) D. a String
