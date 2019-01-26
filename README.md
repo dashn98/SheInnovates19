@@ -91,3 +91,14 @@ A. a data structure consisting of a collection of elements (values or variables)
 
 5. What runtime is the fastest?
 A. O(nlogn) B. O(n) C. O(1) (correct) D. O(logn)
+
+
+
+Concepts:
+- Data types: integer, string, double, float, variables, and chars
+- Security and passwords
+- Programming statements: if, if-else, for and while
+- Executing basic statements
+- Security and phishing recognition
+- Memory allocation and recall, creating - arrays
+- OSI model and incident indication
