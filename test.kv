@@ -21,20 +21,27 @@ RootWidget:
     TextInput:
         text: 'WELCOME TO CODERUNNER!  CHOOSE YOUR LEVEL'
         pos_hint: {'x': .25}
+    Image:
+        source: 'logo.png'
+        keep_ratio: False
+        allow_stretch: True
+        opacity: 0.8
+        size_hint: 0.3, 0.4
+        pos_hint: {'x': 0.35, 'y': 0.5}
     FloatLayout:
         Button:
             text: 'Easy'
-            size_hint: (.3, .25)
-            pos_hint: {'x': .35, 'y': .6}
+            size_hint: (.3, .2)
+            pos_hint: {'x': .35, 'y': .4}
             on_press: root.screen_manager.set_state(root.name)
         Button:
             text: 'Medium'
-            size_hint: (.3, .25)
-            pos_hint: {'x': .35, 'y': .3}
+            size_hint: (.3, .2)
+            pos_hint: {'x': .35, 'y': .2}
             on_press: root.screen_manager.set_state(root.name)
         Button:
             text: 'Hard'
-            size_hint: (.3, .25)
+            size_hint: (.3, .2)
             pos_hint: {'x': .35, 'y': .0}
             on_press: root.screen_manager.set_state(root.name)
         
