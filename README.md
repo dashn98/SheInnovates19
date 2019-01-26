@@ -140,7 +140,17 @@ Programming
           - Less Than or equal to: a <=b
           - Greater than: a>b
           - Greater than or equal to: a >= b
-          
+          - ++ : adds one to the value
+               ~ x = 0 ; 
+                 x++;
+                 
+                 x now equals 1
+          - -- : subtracts 1
+               ~x = 0
+               x--;
+               
+               x now equals -1
+               
     - Declairing a variable 
          ~In Java~
                - [data type] [variable_name];
@@ -212,12 +222,11 @@ Programming
          
           
          
-     - If Statements
+   - If Statements
           ~In Java~
            
            int age = 22;
-           if(age > 16)
-           {
+           if(age > 16){
            System.out.println("You are old enough to drive!!");
            }
 
@@ -232,16 +241,14 @@ Programming
                
           output: You are old enough to drive!!     
                
-   -If Else Statements
+  -If Else Statements
           ~In Java~
           
           int age = 10;
-          if(age > 18)
-          {
+          if(age > 18){
                System.out.println("You can vote") ;
           } 
-          else
-          {
+          else{
                System.out.println("You are too young to vote");
           }
           
@@ -257,5 +264,49 @@ Programming
                print("you aren't old enough to vote")
                
           output: You aren't old enough to vote 
+          
+          
+         
+  - For Loops
+  
+          ~In Java~
+          for(statement 1; statement 2; statement 3){
+          //code
+          }
+          
+          Statement 1 is executed one time before the execution of the code block
+          statement 2 defines the condition for executing the code block
+          statment 3 is executed (every time ) after the code block has been executed 
+          
+          
+          
+          for(int i = 0; i < 5; i ++){
+          System.out.println(i);
+          }
+          
+          output: 4
+          
+          
+          ~In Python~
+          fruits = ["apple", "bananna", "cherry"]
+          for x in fruit:
+               print(x)
+          
+          
+          output:   apple
+                    bananas
+                    cherry
+               or 
                
+          for x in range(6):
+               print(x)
+              
+              
+              
+         output:     0 
+                     1
+                     2
+                     3
+                     4
+                     5
           
