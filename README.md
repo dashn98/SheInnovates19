@@ -117,15 +117,9 @@ Security and passwords
 
 
 ABOUT: 
-
-Bits & Bytes  
-     -There are 8 bits in a byte
-     -
-     
-     
      
 Programming
-    - Primative Data Types
+     - Primative Data Types
           - Int: 4, -4, 2, 234, 123, -398313
           - Double: 3.2, 4.0, 321.23
           - Float: 3.3f, -43.4f, 3f, 1.23e4        
@@ -150,7 +144,15 @@ Programming
                x--;
                
                x now equals -1
+          - +=: add value
+               x = 2
+               x += 5
+               (x now equals 7)
                
+          - -=: subtract value
+               x = 2 
+               x -= 5
+               (x now equals -3)
     - Declairing a variable 
          ~In Java~
                - [data type] [variable_name];
@@ -222,7 +224,9 @@ Programming
          
           
          
-   - If Statements
+ 
+ 
+     - If Statements
           ~In Java~
            
            int age = 22;
@@ -241,7 +245,8 @@ Programming
                
           output: You are old enough to drive!!     
                
-  -If Else Statements
+     
+     -If Else Statements
           ~In Java~
           
           int age = 10;
@@ -267,10 +272,11 @@ Programming
           
           
          
-  - For Loops
-  
+         
+     - For Loops
           ~In Java~
-          for(statement 1; statement 2; statement 3){
+         
+         for(statement 1; statement 2; statement 3){
           //code
           }
           
@@ -309,4 +315,44 @@ Programming
                      3
                      4
                      5
+                     
+                     
+                     
+                     
+     - While Loop
+          ~In Java~
+          while(boolean_expression){
+               //statements
+          }
+          
+          
+         int x = 0;
+         
+         while (x<5){
+          System.out.print("value of x : " + x);
+          x++;
+         }
+         
+         output:    0
+                    1
+                    2
+                    3
+                    4
+         
+         
+         ~In Python
+         i = 1;
+         while i < 6:
+               print (i)
+               i+=1
+               
+               
+               
+         output:    1
+                    2
+                    3
+                    4
+                    5
+               
+     
           
