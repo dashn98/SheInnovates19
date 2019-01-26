@@ -77,5 +77,5 @@ C. Forward the email to everyone D. Look at the sender's email, verify any logos
 
 Hard: Algorithm questions?
 
-1. Which of the folowing is onsidered a definite indicator of an incident?
+1. Which of the folowing is considered a definite indicator of an incident?
 A. Changes to system logs (correct) B. Activities at unexpected times C. Presence of new accounts D. Presence of unfamiliar files
