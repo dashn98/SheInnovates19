@@ -17,7 +17,7 @@ mygame = pyglet.window.Window(790, 700,                     # setting window
               )                                             # Calling base class constructor
 mygame.set_location(screen.width // 2 - 200,screen.height//2 - 350)
  
-girlImage = pyglet.resource.image('girl.png')                 # Image for brick
+girlImage = pyglet.image.load_animation('fatema.gif')                 # Image for brick
 #girlImage.anchor_x= girlImage.width/2
 #girlImage.anchor_y=girlImage.height/2
 girlSprite= pyglet.sprite.Sprite(girlImage, 300, 60)
@@ -40,9 +40,16 @@ menusprite = pyglet.sprite.Sprite(menuimage, 0, 0)          # sprite for menu
 menusprite.visible= True
 
 
-scoreboard=pyglet.resource.image('scoreboard.png')           #scoreboard sprite
-scoreboard= pyglet.sprite.Sprite(scoreboard, 18, 619)
-scoreboard.visible=True
+liveimage=pyglet.resource.image('star.png')           #scoreboard sprite
+live1= pyglet.sprite.Sprite(liveimage, 600, 600)
+live1.scale = 0.1
+live1.visible=False
+live2= pyglet.sprite.Sprite(liveimage, 650, 600)
+live2.scale = 0.1
+live2.visible=False
+live3= pyglet.sprite.Sprite(liveimage, 700, 600)
+live3.scale = 0.1
+live3.visible=False
 
 bowlsound = pyglet.resource.media("Ball_Return.wav", streaming = False) #sounds to play
 sparesound=pyglet.resource.media("SPARE.wav", streaming = False)
@@ -56,6 +63,9 @@ move=False
 
 c=0
 score = 0
+lives =3
+t =0
+strike =0
 
 
 scorelabel = pyglet.text.Label("",
@@ -63,31 +73,19 @@ scorelabel = pyglet.text.Label("",
                              font_size=48,
                              x=10, y=10,
                              anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
+strikelabel = pyglet.text.Label("",
+                             font_name='Comic Sans MS',
+                             font_size=48,
+                             x=400, y=400,
+                             anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
 looselabel = pyglet.text.Label("",
                              font_name='Comic Sans MS',
                              font_size=48,
                              x=400, y=400,
                              anchor_x='center', anchor_y='center', color=(255, 0, 0, 255))
 scores=[]
-for i in range(20):
-    scores.append(pyglet.text.Label("",
-                                 font_name='Comic Sans MS',
-                                 font_size=20,
-                                 x=33*(i+1), y=(653+684)/2,
-                                 anchor_x='center', anchor_y='center', color=(0, 0, 0, 255)))
-sums=[]
 
-for i in range(10):
-    sums.append(pyglet.text.Label("",
-                                 font_name='Comic Sans MS',
-                                 font_size=20,
-                                 x=40*(i+1)+ 25*i, y=640,
-                                 anchor_x='center', anchor_y='center', color=(0, 0, 0, 255)))
-totallabel=pyglet.text.Label("",
-                                 font_name='Comic Sans MS',
-                                 font_size=30,
-                                 x=735, y=660,
-                                 anchor_x='center', anchor_y='center', color=(0, 0, 0, 255))
+
 
 
 # Questions:
@@ -183,33 +181,17 @@ def on_draw():                                                                  
      
     mygame.clear()
     #bgimage.blit(0,0)
-##    pin1sprite.draw()
-##    pin2sprite.draw()
-##    pin3sprite.draw()
-##    pin4sprite.draw()
-##    pin5sprite.draw()
-##    pin6sprite.draw()
-##    pin7sprite.draw()
-##    pin8sprite.draw()
-##    pin9sprite.draw()
-##    pin10sprite.draw()
-##    arrowsprite.draw()
-    
-    
-    scorelabel.draw()
-    looselabel.draw()
-    scoreboard.draw()
-    
-    totallabel.draw()
-    for i in range(20):
-        scores[i].draw()
-    for i in range(10):
-        sums[i].draw()
     menusprite.draw()
     instsprite.draw()
     backSprite.draw()
     girlSprite.draw()
+    live1.draw()
+    live2.draw()
+    live3.draw()
     obstacleSprite.draw()
+    scorelabel.draw()
+    strikelabel.draw()
+    looselabel.draw()
 
 
 @mygame.event
@@ -224,6 +206,9 @@ def on_mouse_release(x, y, button, modifiers):                                  
                 menusprite.visible= False
                 backSprite.visible=True
                 girlSprite.visible = True
+                live1.visible = True
+                live2.visible = True
+                live3.visible =True
             elif (277 <= x <= 478) and (292 <= y <= 368):                       # if help selected
                 instsprite.visible=True
                 menusprite.visible= False
@@ -322,10 +307,12 @@ def on_mouse_release(x, y, button, modifiers):                                  
             
     
 def update(dt):
-    backSprite.x -= 400 * dt
-    if(backSprite.x <= -600):
-        backSprite.x =0
-    global c, frame
+    global c, frame, lives, t, strike
+    if lives > 0:
+        backSprite.x -= 400 * dt
+        if(backSprite.x <= -600):
+            backSprite.x =0
+    
     #c+=1
     #fram+=1
 ##    if(frame%2 == 0):
@@ -342,9 +329,36 @@ def update(dt):
             obstacleSprite.visible = True
             obstacleSprite.x -=5
         
-        if( obstacleSprite.x <= girlSprite.x):
+        if( obstacleSprite.x <= (girlSprite.x + girlSprite.width)):
             obstacleSprite.x = 800
-            looselabel.text = "Strike!"
+            t+=1
+            lives -=1
+            if(lives == 2):
+                live1.visible = False
+            elif lives == 1:
+                live2.visible = False
+            
+            strike =1
+            
+        if (lives == 0 and strike ==1):
+            live3.visible = False
+            if t < 15:
+                looselabel.text = "Game over. Press back to restart"
+                t+=1
+            else:
+                looselabel.text = ""
+                t=0
+                strike =0
+        elif (lives > 0 and strike ==1):
+            if t < 15:
+                strikelabel.text = "Strike!"
+                t+=1
+            else:
+                strikelabel.text = ""
+                t=0
+                strike =0
+                
+            
         
            
 ##
