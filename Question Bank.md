@@ -29,10 +29,6 @@ Convert Binary to Decimal: What is 0001 in decimal?
 A. 0 B. 3 C. 4. D 1 (correct)
 
 7.  
-Which of the following is a programming conditional statement that, if proved true, performs a function or displays information?  
-A. if-else statement (correct) B. if-or statment C. or-else statement D. for loop
-
-8.
 Pick the best password:
 A. ABCDEF B. apple1234 C. 4rlyp3q@#9MYn24 (Correct) D. NSPHOUSCERATEME
 
