@@ -83,4 +83,6 @@ A. Changes to system logs (correct) B. Activities at unexpected times C. Presenc
 2. Which data structure is indexable?  
 A. Array (correct) B. Graph C. Linked List D. Tree
 
+3. What layer is the data link layer in the OSI model?
+A. First B. Second (Correct) C. Third D. Fourth 
 
