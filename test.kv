@@ -18,21 +18,24 @@ RootWidget:
     
 <MainMenu>:
     screen_manager: self.screen_manager
+    TextInput:
+        text: 'WELCOME TO CODERUNNER!  CHOOSE YOUR LEVEL'
+        pos_hint: {'x': .25}
     FloatLayout:
         Button:
             text: 'Easy'
             size_hint: (.3, .25)
-            pos_hint: {'x': .35, 'y': .7}
+            pos_hint: {'x': .35, 'y': .6}
             on_press: root.screen_manager.set_state(root.name)
         Button:
             text: 'Medium'
             size_hint: (.3, .25)
-            pos_hint: {'x': .35, 'y': .4}
+            pos_hint: {'x': .35, 'y': .3}
             on_press: root.screen_manager.set_state(root.name)
         Button:
             text: 'Hard'
             size_hint: (.3, .25)
-            pos_hint: {'x': .35, 'y': .1}
+            pos_hint: {'x': .35, 'y': .0}
             on_press: root.screen_manager.set_state(root.name)
         
 
