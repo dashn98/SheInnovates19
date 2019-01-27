@@ -134,25 +134,7 @@ Programming
           - Less Than or equal to: a <=b
           - Greater than: a>b
           - Greater than or equal to: a >= b
-          - ++ : adds one to the value
-               ~ x = 0 ; 
-                 x++;
-                 
-                 x now equals 1
-          - -- : subtracts 1
-               ~x = 0
-               x--;
-               
-               x now equals -1
-          - +=: add value
-               x = 2
-               x += 5
-               (x now equals 7)
-               
-          - -=: subtract value
-               x = 2 
-               x -= 5
-               (x now equals -3)
+          
     - Declairing a variable 
          ~In Java~
                - [data type] [variable_name];
@@ -168,20 +150,7 @@ Programming
                - bloolean true_or_false = false;
                - float f = 43.2e3f;
                - double d = 23.3;
-               
-         ~In Python~
-               - [varialbe name] = [data]
-               - Int
-                    -x = 5
-               - String
-                    -name = "Johnny"
-               - Boolean
-                    -true_or_false = True
-               - Float
-                    - f = 34.34e2f
-               - Double
-                    - d = 4.3
-              
+                       
               
               
     - Print Statements
@@ -192,40 +161,7 @@ Programming
           
           output: Hello World
           
-               -No variable
-          System.out.println("Hello World") 
-         
-         output: Hello World
-         
-               - Concatination
-         String name = "Johnny"
-         System.out.println("Hello my name is " + name);
-         
-         output: Hello my name is Johnny
-         
-         
-         ~In Python~
-               - using a variable
-          helloworld = "Hello World"
-          print(helloworld
-          
-          output: Hello World
-          
-               - no variable
-          print("Hello World")
-          
-          output: Hello World
-          
-                - Concatination
-         name = "Johnny"
-         print("Hello My name is ", name)
-         
-         output: Hello My name is Johnny
-         
-          
-         
- 
- 
+              
      - If Statements
           ~In Java~
            
@@ -236,16 +172,6 @@ Programming
 
           output: You are old enough to drive!!
 
-
-          ~In Python~
-          a = 22
-          b = 16
-          if a > b: 
-               print("You are old enough to drive!!")
-               
-          output: You are old enough to drive!!     
-               
-     
      -If Else Statements
           ~In Java~
           
@@ -260,18 +186,6 @@ Programming
           output: You are too young to vote
           
           
-          ~In Python~
-          
-          age = 10
-          if age > 18:
-               print("you are old enough to vote")
-          else:
-               print("you aren't old enough to vote")
-               
-          output: You aren't old enough to vote 
-          
-          
-         
          
      - For Loops
           ~In Java~
@@ -292,33 +206,7 @@ Programming
           
           output: 4
           
-          
-          ~In Python~
-          fruits = ["apple", "bananna", "cherry"]
-          for x in fruit:
-               print(x)
-          
-          
-          output:   apple
-                    bananas
-                    cherry
-               or 
-               
-          for x in range(6):
-               print(x)
-              
-              
-              
-         output:     0 
-                     1
-                     2
-                     3
-                     4
-                     5
-                     
-                     
-                     
-                     
+         
      - While Loop
           ~In Java~
           while(boolean_expression){
@@ -339,31 +227,7 @@ Programming
                     3
                     4
          
-         
-         ~In Python
-         i = 1;
-         while i < 6:
-               print (i)
-               i+=1
-               
-               
-               
-         output:    1
-                    2
-                    3
-                    4
-                    5
-               
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+      
      
      Mary Jackson
     Born in Virginia in 1921, Mary Winston Jackson excelled academically in a time of racial segregation. Her math and science skills earned her a position as a "human computer" for NACA, and she later became NASA's first black female engineer. Along with serving a vital role in the development of the space program, she helped other women and minorities advance their careers. Jackson died in February 2005 at the age of 83.
